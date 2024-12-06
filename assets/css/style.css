@@ -1,0 +1,647 @@
+/* 通用容器 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* 头部样式 */
+.header {
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.5s ease;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav ul {
+    display: flex;
+    gap: 40px;
+}
+
+.nav a {
+    padding: 10px;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav a:hover,
+.nav a.active {
+    color: #e74c3c;
+}
+
+/* 英雄区域 */
+.hero {
+    height: 40vh;
+    background: url('../images/hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.hero-content h1 {
+    color: #fff;
+    font-size: 48px;
+    font-weight: bold;
+    max-width: 100%;
+    margin: 0 auto;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* 关于我们 */
+.about {
+    padding: 70px 0;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.about h2,
+.core-services h2 {
+    font-size: 35px;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+.about h3,
+.core-services h3 {
+    font-size: 35px;
+    color: rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: -20px;
+}
+
+.about-content {
+    max-width: 100vh;
+    margin: 0 auto;
+    line-height: 1.2;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* 核心服务 */
+.core-services {
+    padding: 60px 0;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-item {
+    aspect-ratio: 1;
+    position: relative;
+    border-radius: 0;
+    transition: transform 0.3s;
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.service-content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 30px;
+}
+
+.service-item h4 {
+    font-size: 18px;
+    color: white;
+    text-align: left;
+    width: 100%;
+    margin-top: -10px; /* 添加负的上边距，让文字往上移 */
+    position: relative;
+    z-index: 2;
+}
+
+.service-item .description {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 100%;
+    background: rgba(233, 148, 92, 0.722);
+    transition: top 0.5s ease;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 30px;
+    z-index: 1;
+}
+
+.service-item .description p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: white;
+    margin-top: 25px;
+    text-align: left;
+}
+
+/* 悬停效果 */
+.service-item:hover .description {
+    top: 0;
+}
+
+
+.service-item:hover h4 {
+    transform: none;
+}
+
+/* 页脚样式 */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.footer-logo img {
+    height: 40px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    margin-left: 20px;
+    color: #999;
+}
+
+.qr-code img {
+    width: 120px;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #999;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .hero-content h1 {
+        font-size: 36px;
+        padding: 0 20px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+} 
+
+/* 为每个服务项目设置对应的背景图片 */
+.service-item:nth-child(1) {
+    background-image: url('../images/num1.jpg');
+}
+
+.service-item:nth-child(2) {
+    background-image: url('../images/num2.jpg');
+}
+
+.service-item:nth-child(3) {
+    background-image: url('../images/num3.jpg');
+}
+
+.service-item:nth-child(4) {
+    background-image: url('../images/num4.jpg');
+}
+
+/* 企业理念 */
+.motto {
+    margin: 80px 0;
+}
+
+.motto-content {
+    display: flex;
+    height: 70vh;
+}
+
+.motto-text {
+    flex: 1;
+    background-color: #e74c3c;
+    color: white;
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.motto-text h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+.motto-text p {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.motto-text .btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.motto-text .btn:hover {
+    background-color: white;
+    color: #e74c3c;
+}
+
+.motto-image {
+    flex: 1;
+}
+
+.motto-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 团队绍 */
+.team {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+}
+
+.team-content {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.team-image {
+    flex: 1;
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.team-image img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.team-info {
+    flex: 1;
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.team h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: left;
+}
+
+.team h3 {
+    font-size: 24px;
+    color: #666;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.team-description p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+}
+
+/* 响应式设计补充 */
+@media (max-width: 768px) {
+    .motto-content {
+        flex-direction: column;
+        height: auto;
+    }
+    
+    .motto-text {
+        padding: 40px 20px;
+    }
+    
+    .motto-text h2 {
+        font-size: 32px;
+    }
+    
+    .motto-text p {
+        font-size: 20px;
+    }
+    
+    .team-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+/* 联系我们页面样式 */
+.contact-hero {
+    height: 300px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/contact-bg.jpg') no-repeat center center;
+    background-size: cover;
+    margin-top: 80px;
+    position: relative;
+}
+
+.contact-hero .container {
+    height: 100%;
+}
+
+.contact-hero h1 {
+    color: #fff;
+    font-size: 48px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.contact-section {
+    min-height: calc(90vh - 380px);
+    display: flex;
+    align-items: center;
+}
+
+.contact-section .container {
+    width: 100%;
+}
+
+.contact-content {
+    display: flex;
+    gap: 60px;
+    padding: 40px 0;
+    align-items: flex-start;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.info-item {
+    margin-bottom: 20px;
+}
+
+.info-item .label {
+    color: #666;
+    margin-right: 10px;
+}
+
+.info-item .value {
+    color: #333;
+}
+
+.map-container {
+    flex: 1;
+}
+
+.map {
+    margin-top: 40px;
+}
+
+.map #baiduMap {
+    width: 100%;
+    height: 400px;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* 响应式动画调整 */
+@media (max-width: 768px) {
+    .contact-section {
+        min-height: calc(90vh - 380px);
+    }
+    
+    .contact-hero h1 {
+        margin-left: 20px;
+        font-size: 36px;
+    }
+    
+    .animate-left,
+    .animate-right {
+        animation-duration: 0.6s;
+    }
+}
+
+/* 联系我们页面动画 */
+@keyframes slideFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-left {
+    animation: slideFromLeft 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.animate-right {
+    animation: slideFromRight 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+/* 首页动画效果 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.about {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.about.animate-start {
+    animation: scaleIn 1s ease forwards;
+}
+
+.core-services {
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.core-services.animate-start {
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+/* 响应式动画调整 */
+@media (max-width: 768px) {
+    .core-services.animate-start,
+    .about.animate-start,
+    .team-image.animate-start,
+    .team-info.animate-start {
+        animation-duration: 0.8s;
+    }
+    
+    .team-info.animate-start {
+        animation-delay: 0.2s;
+    }
+}
+
+/* 团队部分动画 */
+.team-image {
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.team-info {
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.team-image.animate-start {
+    animation: fadeInUp 1s ease forwards;
+}
+
+.team-info.animate-start {
+    animation: fadeInUp 1s ease forwards;
+    /* 延迟0.3秒，创造错落感 */
+    animation-delay: 0.3s;
+}
+
+/* 首页动画效果 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.about {
+    opacity: 0;
+    transform: scale(0.8);
+}
+
+.about.animate-start {
+    animation: scaleIn 1s ease forwards;
+}
+
+.core-services {
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.core-services.animate-start {
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+/* 响应式动画调整 */
+@media (max-width: 768px) {
+    .core-services.animate-start,
+    .about.animate-start,
+    .team-image.animate-start,
+    .team-info.animate-start {
+        animation-duration: 0.8s;
+    }
+    
+    .team-info.animate-start {
+        animation-delay: 0.2s;
+    }
+}
+
+
