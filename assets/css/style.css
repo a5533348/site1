@@ -227,7 +227,7 @@
     }
     
     .hero-content h1 {
-        font-size: 36px;
+        font-size: 32px;
         padding: 0 20px;
     }
     
@@ -235,6 +235,50 @@
         flex-direction: column;
         text-align: center;
         gap: 30px;
+    }
+
+    .about h2,
+    .core-services h2,
+    .team h2 {
+        font-size: 28px;
+    }
+
+    .about h3,
+    .core-services h3,
+    .team h3 {
+        font-size: 28px;
+    }
+
+    .about-content p {
+        font-size: 14px;
+    }
+
+    .service-item h4 {
+        font-size: 16px;
+    }
+
+    .service-item .description p {
+        font-size: 14px;
+    }
+
+    .team-description p {
+        font-size: 14px;
+    }
+
+    .contact-hero h1 {
+        font-size: 32px;
+    }
+
+    .contact-info h2 {
+        font-size: 20px;
+    }
+
+    .info-item {
+        font-size: 14px;
+    }
+
+    .footer .contact-info p {
+        font-size: 14px;
     }
 } 
 

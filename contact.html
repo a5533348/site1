@@ -1,107 +1,132 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>联系我们 - Connex</title>
-    <link rel="stylesheet" href="assets/css/reset.css" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-  </head>
-  <body>
-    <!-- 头部导航 -->
-    <header class="header">
-      <div class="container">
-        <div class="logo">
-          <a href="index.html">
-            <img src="assets/images/logo.png" alt="Connex" />
-          </a>
-        </div>
-        <nav class="nav">
-          <ul>
-            <li><a href="index.html">首页</a></li>
-            <li><a href="contact.html" class="active">联系我们</a></li>
-          </ul>
-        </nav>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>联系我们 - Connex</title>
+  <link rel="stylesheet" href="assets/css/reset.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+  <!-- 头部导航 -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="assets/images/logo.png" alt="Connex" />
+        </a>
       </div>
-    </header>
+      <nav class="nav">
+        <ul>
+          <li><a href="index.html">首页</a></li>
+          <li><a href="contact.html" class="active">联系我们</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- 主要内容区 -->
-    <main>
-      <!-- 联系我们横幅 -->
-      <section class="contact-hero">
-        <div class="container">
-          <h1>联系我们</h1>
-        </div>
-      </section>
-
-      <!-- 联系表单区域 -->
-      <section class="contact-section">
-        <div class="container">
-          <div class="contact-content">
-            <div class="contact-info">
-              <h2>联系方式</h2>
-              <div class="info-item">
-                <span class="label">地址：</span>
-                <span class="value">上海市徐汇区天华中路600号领智中心705</span>
-              </div>
-              <div class="info-item">
-                <span class="label">邮箱：</span>
-                <span class="value">info@byconnex.com</span>
-              </div>
-              <div class="map">
-                <div id="baiduMap"></div>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- 页脚 -->
-    <footer class="footer">
+  <!-- 主要内容区 -->
+  <main>
+    <!-- 联系我们横幅 -->
+    <section class="contact-hero">
       <div class="container">
-        <div class="footer-content">
-          <div class="footer-logo">
-            <img src="assets/images/logo2.png" alt="Connex" />
-          </div>
+        <h1>联系我们</h1>
+      </div>
+    </section>
+
+    <!-- 联系表单区域 -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-content">
           <div class="contact-info">
-            <p>地址：上海市长宁区天山路789号长宁科技大厦</p>
-            <p>邮箱：info@connex.com</p>
+            <h2>联系方式</h2>
+            <div class="info-item">
+              <span class="label">地址：</span>
+              <span class="value">上海市徐汇区天华中路600号领智中心705</span>
+            </div>
+            <div class="info-item">
+              <span class="label">邮箱：</span>
+              <span class="value">info@byconnex.com</span>
+            </div>
+            <div class="map">
+              <div id="baiduMap"></div>
+            </div>
           </div>
-          <div class="qr-code">
-            <img src="assets/images/qrcode.jpg" alt="扫码关注" />
-          </div>
-        </div>
-        <div class="copyright">
-          <p>版权所有 © Connex品牌管理</p>
+
         </div>
       </div>
-    </footer>
+    </section>
+  </main>
 
-    <!-- 百度地图API -->
-    <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
-    <script>
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="assets/images/logo2.png" alt="Connex" />
+        </div>
+        <div class="contact-info">
+          <p>地址：上海市长宁区天山路789号长宁科技大厦</p>
+          <p>邮箱：info@connex.com</p>
+        </div>
+        <div class="qr-code">
+          <img src="assets/images/qrcode.jpg" alt="扫码关注" />
+        </div>
+      </div>
+      <div class="copyright">
+        <p>版权所有 © Connex品牌管理</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 百度地图API -->
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=rAyFMmkraz3sZ6njpkNjM5u3DzxlIMY6"></script>
+  <script>
+    // 初始化地图
+    function initMap() {
+      const map = new BMap.Map("baiduMap");
+      const point = new BMap.Point(121.428214, 31.197874);
+
       // 初始化地图
-      function initMap() {
-        const map = new BMap.Map("baiduMap");
-        // 设置中心点坐标（这里使用上海某个位置的坐标）
-        const point = new BMap.Point(121.437685, 31.223353);
-        // 初始化地图，设置中心点坐标和地图缩放级别
-        map.centerAndZoom(point, 16);
-        // 添加缩放控件
-        map.addControl(new BMap.ZoomControl());
-        // 启用鼠标滚轮缩放
-        map.enableScrollWheelZoom();
-        // 添加标记点
-        const marker = new BMap.Marker(point);
-        map.addOverlay(marker);
-      }
+      map.centerAndZoom(point, 16);
+      map.addControl(new BMap.NavigationControl());
+      // map.enableScrollWheelZoom();
 
-      // 页面加载完成后初始化地图
-      window.onload = initMap;
-    </script>
+      // 创建自定义图标
+      const myIcon = new BMap.Icon(
+        "https://api.map.baidu.com/images/marker_red_sprite.png", // 使用百度默认红色图标
+        new BMap.Size(39, 50),  // 图标大小
+        {
+          // 图标的定位点相对于图标左上角的偏移值
+          anchor: new BMap.Size(19, 50),
+          // 图片的偏移值，使用雪碧图时需要设置
+          imageOffset: new BMap.Size(0, 0)
+        }
+      );
 
-    <script src="assets/js/main.js"></script>
-  </body>
-</html> 
+      // 使用自定义图标创建标记
+      const marker = new BMap.Marker(point, { icon: myIcon });
+      map.addOverlay(marker);
+
+      // 添加信息窗口
+      const infoWindow = new BMap.InfoWindow("上海市徐汇区天华中路600号领智中心705", {
+        width: 250,
+        height: 70,
+        title: "Connex"
+      });
+
+      marker.addEventListener("click", function () {
+        map.openInfoWindow(infoWindow, point);
+      });
+    }
+
+    // 页面加载完成后初始化地图
+    window.onload = initMap;
+  </script>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
