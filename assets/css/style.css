@@ -22,8 +22,16 @@
     height: 80px;
 }
 
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
 .logo img {
-    height: 40px;
+    height: 60px;
 }
 
 .nav ul {
@@ -199,7 +207,7 @@
 }
 
 .footer-logo img {
-    height: 40px;
+    height: 50px;
 }
 
 .contact-info p {
